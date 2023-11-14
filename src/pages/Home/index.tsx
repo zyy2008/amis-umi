@@ -1,16 +1,26 @@
-import Guide from '@/components/Guide';
-import { trim } from '@/utils/format';
 import { PageContainer } from '@ant-design/pro-components';
-import { useModel } from '@umijs/max';
-import styles from './index.less';
+import { setDefaultTheme } from 'amis';
+import { Editor } from 'amis-editor';
+import 'amis-editor-core/lib/style.css';
+import 'amis/lib/helper.css';
+import 'amis/lib/themes/cxd.css';
+import 'amis/sdk/iconfont.css';
+import React from 'react';
+// configure({ isolateGlobalState: true });
+
+setDefaultTheme('cxd');
 
 const HomePage: React.FC = () => {
-  const { name } = useModel('global');
+  const [value, setValue] = React.useState<object>({});
   return (
     <PageContainer ghost>
-      <div className={styles.container}>
-        <Guide name={trim(name)} />
-      </div>
+      <Editor
+        value={{
+          type: 'page',
+          body: 'Hello World!',
+        }}
+        onChange={setValue}
+      />
     </PageContainer>
   );
 };
