@@ -9,12 +9,10 @@ export default defineConfig({
   request: {},
   chainWebpack: (memo) => {
     // 更多配置 https://github.com/Microsoft/monaco-editor-webpack-plugin#options
-    memo.plugin('monaco-editor-webpack-plugin').use(MonacoWebpackPlugin, [
-      // 按需配置
-      { languages: ['javascript'] },
-    ]);
+    memo.plugin('monaco-editor-webpack-plugin').use(MonacoWebpackPlugin);
     return memo;
   },
+  mfsu: false,
   layout: {
     title: '@umijs/max',
   },
@@ -29,5 +27,5 @@ export default defineConfig({
       component: './Home',
     },
   ],
-  npmClient: 'yarn',
+  npmClient: 'npm',
 });
