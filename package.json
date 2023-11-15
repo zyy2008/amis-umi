@@ -10,7 +10,7 @@
     "start": "npm run dev"
   },
   "dependencies": {
-    "@ant-design/pro-components": "2.3.58",
+    "@ant-design/pro-components": "2.3.59",
     "@umijs/max": "^4.0.88",
     "amis": "3.5.2",
     "amis-core": "3.5.2",
